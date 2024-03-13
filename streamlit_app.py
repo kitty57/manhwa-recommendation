@@ -25,7 +25,8 @@ def main():
         response = recommend(manhwa_title, model)
         recommendations = response.split('---') 
         st.write("Recommendations and Why you'd like them")
-        st.markdown(recommendations)
+        for i in recommendations:
+            st.markdown(i)
 
 if __name__ == '__main__':
     main()
