@@ -6,9 +6,7 @@ genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 
 def prompt(manhwa_title):
     prompt_parts = [
-        f"'As a vivid manhwa reader who has read all manhwas of all genres present online,First, Give a short synopsis of the chosen manhwa."
-        f"recommend five manhwas similar to the given manhwa: {manhwa_title},."
-        f"Also for each manhwa, explain why you find it similar to the given manhwa and add --- before recommending the next manhwa'",
+        f"'As an avid manhwa reader who has extensively explored manhwas across all genres available online, please provide a brief synopsis of the selected manhwa:{manhwa_title}. Additionally, recommend five manhwas that are similar to the chosen manhwa:{manhw_title}. For each recommended manhwa, explain why you consider it similar to the chosen manhwa. Please add '---' before recommending the next manhwa.'",
     ]
     return prompt_parts
     
