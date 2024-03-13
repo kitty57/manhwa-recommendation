@@ -6,9 +6,9 @@ genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 
 def prompt(manhwa_title):
     prompt_parts = [
-        f"'As a avid manhwa reader with a wide range of preferences,"
-        f"recommend five manhwas similar to the given title: {manhwa_title},"
-        f"Also for each manhwa, explain why you find it similar to the given title and add --- before recommending the next manhwa'",
+        f"'As a vivid manhwa reader who has read all manhwas of all genres present online,"
+        f"recommend five manhwas similar to the given manhwa: {manhwa_title},give a short description of the chosen manhwa too."
+        f"Also for each manhwa, explain why you find it similar to the given manhwa and add --- before recommending the next manhwa'",
     ]
     return prompt_parts
     
@@ -25,12 +25,7 @@ def main():
         response = recommend(manhwa_title, model)
         recommendations = response.split('---') 
         st.write("Recommendations and Why you'd like them")
-        for i, recommendation in enumerate(recommendations, start=1):
-            text_color = '#000000'
-            background_color = '#' + '%06x' % random.randint(0, 0xFFFFFF) 
-            style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 45px;"
-            recommendation_text = recommendation.replace('**', '<strong>', 1).replace('**', '</strong>', 1)
-            st.markdown(f"<div style='{style}'>{recommendation_text}</div>", unsafe_allow_html=True)
+        st.markdown(recommendations')
 
 if __name__ == '__main__':
     main()
