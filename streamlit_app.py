@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import random
 
-genai.configure(api_key='YOUR_API_KEY')  # Replace 'YOUR_API_KEY' with your actual API key
+genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')  
 
 def prompt(manhwa_title):
     prompt_parts = [
