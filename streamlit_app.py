@@ -11,7 +11,7 @@ manhwas = {
 def recommend_manhwas(selected_genres):
     recommended_manhwas = []
     for genre in selected_genres:
-        recommended_manhwas.extend(manhwas.get(genore, []))
+        recommended_manhwas.extend(manhwas.get(genre, []))
     return recommended_manhwas
 
 # Streamlit UI
