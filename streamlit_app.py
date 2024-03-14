@@ -27,7 +27,7 @@ def recommend(manhwa_title, model, user_answers):
 def main():
     st.title('📚 Manhwa Recommendation App')
 
-    manhwa_title = st.text_input('Enter the manhwa title:')
+    manhwa_title = st.text_input('What's the title of the manhwa that's your absolute favorite?')
     questions = [
         "What genre do you prefer?",
         "Do you like action-packed manhwas or more slow-paced ones?",
