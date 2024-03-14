@@ -7,11 +7,13 @@ genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 def prompt_with_answers(manhwa_title, user_answers):
     prompt_parts = [
         f'''As an avid manhwa reader who has extensively explored manhwas across all genres available online, please provide a brief synopsis of the selected manhwa: {manhwa_title}. 
-        Additionally, recommend five manhwas that are similar to the chosen manhwa: {manhwa_title}. Use the following information about the user's preferences while recommending a manhwa.
-        1. Favorite genre: {user_answers[0]}
-        2. Action-packed/slow-paced: {user_answers[1]}
-        3. Does the user prefer romance manhwa: {user_answers[2]}
-        4. Themes enjoyed by the user: {user_answers[3]}
+        Additionally, recommend five manhwas that the user might like based on user's preferences.
+        Preferences:
+        -Favourite manhwa:{manhwa_title}
+        -Favorite genre: {user_answers[0]}
+        - Action-packed/slow-paced: {user_answers[1]}
+        -Does the user prefer romance manhwa: {user_answers[2]}
+        -Themes enjoyed by the user: {user_answers[3]}
         For each recommended manhwa, explain why you consider it similar to the chosen manhwa. 
         Please add '---' before recommending the next manhwa.''',
     ]
