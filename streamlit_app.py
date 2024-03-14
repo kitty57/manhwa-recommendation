@@ -46,8 +46,12 @@ def main():
         recommendations = response.split('---') 
         st.write("🌟 Recommendations and Why You'd Like Them")
         for idx, rec in enumerate(recommendations, start=1):
-            with st.expander(f"Recommendation {idx}"):
-                st.markdown(f"📌 {rec}")
+            if idx==0:
+                with st.expander(f"Synopsis"):
+                    st.markdown(f"📌 {rec}")
+            else:
+                with st.expander(f"Recommendation {idx}"):
+                    st.markdown(f"📌 {rec}")
                 
     elif manhwa_title or any(user_answers):
         st.warning("Please provide answers to all questions to get recommendations.")
