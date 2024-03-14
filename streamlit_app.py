@@ -39,13 +39,16 @@ def main():
         answer = st.text_input(question)
         user_answers.append(answer)
 
+
     if manhwa_title and all(user_answers):
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(manhwa_title, model, user_answers)
         recommendations = response.split('---') 
         st.write("🌟 Recommendations and Why You'd Like Them")
-        for i in recommendations:
-            st.markdown(f"📌 {i}")
+        for idx, rec in enumerate(recommendations, start=1):
+            with st.expander(f"Recommendation {idx}"):
+                st.markdown(f"📌 {rec}")
+                
     elif manhwa_title or any(user_answers):
         st.warning("Please provide answers to all questions to get recommendations.")
 
