@@ -46,6 +46,7 @@ def main():
         recommendations = response.split('---') 
         with st.expander(f"Synopsis"):
             st.markdown(f"📌 {recommendations[0]}")
+        recommendations.pop(0)
         st.write("🌟 Recommendations and Why You'd Like Them")
         for idx, rec in enumerate(recommendations, start=2):
             with st.expander(f"Recommendation {idx}"):
