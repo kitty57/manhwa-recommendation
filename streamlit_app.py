@@ -44,14 +44,12 @@ def main():
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(manhwa_title, model, user_answers)
         recommendations = response.split('---') 
+        with st.expander(f"Synopsis"):
+            st.markdown(f"📌 {recommendations[1]}")
         st.write("🌟 Recommendations and Why You'd Like Them")
-        for idx, rec in enumerate(recommendations, start=1):
-            if idx==1:
-                with st.expander(f"Synopsis"):
-                    st.markdown(f"📌 {rec}")
-            else:
-                with st.expander(f"Recommendation {idx}"):
-                    st.markdown(f"📌 {rec}")
+        for idx, rec in enumerate(recommendations, start=2):
+            with st.expander(f"Recommendation {idx}"):
+                st.markdown(f"📌 {rec}")
                 
     elif manhwa_title or any(user_answers):
         st.warning("Please provide answers to all questions to get recommendations.")
