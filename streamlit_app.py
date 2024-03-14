@@ -46,7 +46,7 @@ def main():
         recommendations = response.split('---') 
         st.write("🌟 Recommendations and Why You'd Like Them")
         for idx, rec in enumerate(recommendations, start=1):
-            if idx==0:
+            if idx==1:
                 with st.expander(f"Synopsis"):
                     st.markdown(f"📌 {rec}")
             else:
